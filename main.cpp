@@ -1,3 +1,4 @@
+#include <iostream>
 #include "box.h"
 int main(){
     box box1 = box(3,3,3,3,3);

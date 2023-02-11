@@ -8,7 +8,7 @@ return value;
 }
 bool NotBiggerThanSize(box boxes[],int size,int max_value){
 for(int i=0;i<size;i++){
-    if (boxes[i]>max_value)
+    if (boxes[i].height*boxes[i].length*boxes[i].width > max_value)
     return false;
 }
 return true;
