@@ -3,14 +3,14 @@
 int SumValue(box boxes[], int size) {
     int value = 0;
     for (int i = 0; i < size; i++) {
-        value += boxes[i].value;
+        value += boxes[i].GetValue();
     }
     return value;
 }
 
 bool NotBiggerThanSize(box boxes[], int size, int max_value) {
     for (int i = 0; i < size; i++) {
-        if (boxes[i].height * boxes[i].length * boxes[i].width > max_value)
+        if (boxes[i].GetHeight() * boxes[i].GetLength() * boxes[i].GetWidth() > max_value)
             return false;
     }
     return true;
@@ -19,9 +19,9 @@ bool NotBiggerThanSize(box boxes[], int size, int max_value) {
 int MaxWeight(box boxes[], int size, int maxV) {
     int max_weight_box = 0;
     for (int i = 0; i < size; i++) {
-        if (boxes[i].height * boxes[i].length * boxes[i].width < maxV) {
-            if (boxes[i].weight > max_weight_box) {
-                max_weight_box = boxes[i].weight;
+        if (boxes[i].GetHeight() * boxes[i].GetLength() * boxes[i].GetWidth() < maxV) {
+            if (boxes[i].GetWeight() > max_weight_box) {
+                max_weight_box = boxes[i].GetWeight();
             }
         }
         return max_weight_box;
@@ -34,7 +34,7 @@ bool PuttingIt(box boxes[], int size) {
     Data data[size];
     for (int i = 0; i < size; i++) {
         data[i].Box = boxes[i];
-        data[i].volume = boxes[i].height * boxes[i].length * boxes[i].width;
+        data[i].volume = boxes[i].GetHeight() * boxes[i].GetLength() * boxes[i].GetWidth();
     }
     for (int i = 1; i < size; i++) {
         while (data[i - 1].volume > data[i].volume) {
@@ -44,14 +44,16 @@ bool PuttingIt(box boxes[], int size) {
         }
     }
     for (int i = 1; i < size; i++) {
-        if (data[i].Box.height < data[i - 1].Box.height || data[i].Box.length < data[i - 1].Box.length ||
-            data[i].Box.width < data[i - 1].Box.width)
+        if (data[i].Box.GetHeight() < data[i - 1].Box.GetHeight() ||
+            data[i].Box.GetLength() < data[i - 1].Box.GetLength() ||
+            data[i].Box.GetWidth() < data[i - 1].Box.GetWidth())
             return false;
     }
     return true;
 }
 
 bool equals(box box1, box box2) {
-    return (box1.width == box2.width && box1.height == box2.height && box1.length == box2.length &&
-            box1.value == box2.value && (box1.weight - box2.weight) < 0.000005);
+    return (box1.GetWidth() == box2.GetWidth() && box1.GetHeight() == box2.GetHeight() &&
+            box1.GetLength() == box2.GetLength() &&
+            box1.GetValue() == box2.GetValue() && (box1.GetWeight() - box2.GetWeight()) < 0.000005);
 }

@@ -7,6 +7,6 @@ int main() {
     box box3 = box(4, 4, 4, 4, 4);
     box box4 = box(5, 5, 5, 5, 5);
     box boxes[4] = {box1, box2, box3, box4};
-    std::cout << PuttingIt(boxes, 4);
+     std::cout << PuttingIt(boxes, 4);
 }
 
