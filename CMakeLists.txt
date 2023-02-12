@@ -4,7 +4,7 @@ project(Test VERSION 0.1.0)
 include(CTest)
 enable_testing()
 
-add_executable(SEM3_0 cpp/main.cpp cpp/methods.cpp headers/methods.h)
+add_executable(SEM3_0 cpp/main.cpp cpp/Methods.cpp headers/Methods.h headers/Container.h headers/Data.h)
 
 set(CPACK_PROJECT_NAME ${PROJECT_NAME})
 set(CPACK_PROJECT_VERSION ${PROJECT_VERSION})

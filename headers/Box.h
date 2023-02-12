@@ -1,4 +1,4 @@
-class box {
+class Box {
 private :
     int length;
     int width;
@@ -6,7 +6,7 @@ private :
     double weight;
     int value;
 public:
-    box(int length_input, int width_input, int height_input, double weight_input, int value_input) {
+    Box(int length_input, int width_input, int height_input, double weight_input, int value_input) {
         length = length_input;
         width = width_input;
         height = height_input;
@@ -14,7 +14,7 @@ public:
         value = value_input;
     }
 
-    box() {
+    Box() {
         length = 0;
         width = 0;
         height = 0;
@@ -50,11 +50,4 @@ public:
     }
 };
 
-struct Data {
-    box Box;
-    int volume;
 
-    Data() {
-        volume = 0;
-    }
-};

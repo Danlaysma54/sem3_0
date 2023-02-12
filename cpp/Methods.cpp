@@ -1,6 +1,6 @@
-#include "../headers/structures_classes.h"
+#include "../headers/Data.h"
 
-int SumValue(box boxes[], int size) {
+int SumValue(Box boxes[], int size) {
     int value = 0;
     for (int i = 0; i < size; i++) {
         value += boxes[i].GetValue();
@@ -8,7 +8,7 @@ int SumValue(box boxes[], int size) {
     return value;
 }
 
-bool NotBiggerThanSize(box boxes[], int size, int max_value) {
+bool NotBiggerThanSize(Box boxes[], int size, int max_value) {
     for (int i = 0; i < size; i++) {
         if (boxes[i].GetHeight() * boxes[i].GetLength() * boxes[i].GetWidth() > max_value)
             return false;
@@ -16,7 +16,7 @@ bool NotBiggerThanSize(box boxes[], int size, int max_value) {
     return true;
 }
 
-int MaxWeight(box boxes[], int size, int maxV) {
+int MaxWeight(Box boxes[], int size, int maxV) {
     int max_weight_box = 0;
     for (int i = 0; i < size; i++) {
         if (boxes[i].GetHeight() * boxes[i].GetLength() * boxes[i].GetWidth() < maxV) {
@@ -28,7 +28,7 @@ int MaxWeight(box boxes[], int size, int maxV) {
     }
 }
 
-bool PuttingIt(box boxes[], int size) {
+bool PuttingIt(Box boxes[], int size) {
 
     Data tmp;
     Data data[size];
@@ -52,7 +52,7 @@ bool PuttingIt(box boxes[], int size) {
     return true;
 }
 
-bool equals(box box1, box box2) {
+bool equals(Box box1, Box box2) {
     return (box1.GetWidth() == box2.GetWidth() && box1.GetHeight() == box2.GetHeight() &&
             box1.GetLength() == box2.GetLength() &&
             box1.GetValue() == box2.GetValue() && (box1.GetWeight() - box2.GetWeight()) < 0.000005);
