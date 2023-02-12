@@ -1,4 +1,4 @@
-#include "smth.h"
+#include "../headers/structures_classes.h"
 
 int SumValue(box boxes[], int size) {
     int value = 0;
@@ -49,4 +49,9 @@ bool PuttingIt(box boxes[], int size) {
             return false;
     }
     return true;
+}
+
+bool equals(box box1, box box2) {
+    return (box1.width == box2.width && box1.height == box2.height && box1.length == box2.length &&
+            box1.value == box2.value && (box1.weight - box2.weight) < 0.000005);
 }

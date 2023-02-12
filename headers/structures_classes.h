@@ -1,10 +1,11 @@
-struct box {
+class box {
+private :
     int length;
     int width;
     int height;
     double weight;
     int value;
-
+public:
     box(int length_input, int width_input, int height_input, double weight_input, int value_input) {
         length = length_input;
         width = width_input;
@@ -20,6 +21,33 @@ struct box {
         weight = 0;
         value = 0;
     }
+
+    int GetLength() {
+        return length;
+    }
+
+    int GetWidth() {
+        return width;
+    }
+
+    int GetHeight() {
+        return height;
+    }
+
+    double GetWeight() {
+        return weight;
+    }
+
+    int GetValue() {
+        return value;
+    }
+
+    void SetLength(int input_length) {
+        length = input_length;
+    }
+    void SetWidth(int input_width) {
+        length = input_width;
+    }
 };
 
 struct Data {
@@ -30,11 +58,3 @@ struct Data {
         volume = 0;
     }
 };
-
-int SumValue(box[], int);
-
-bool NotBiggerThanSize(box[], int, int);
-
-int MaxWeight(box [], int, int);
-
-bool PuttingIt(box[], int);
