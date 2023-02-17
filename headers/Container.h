@@ -58,9 +58,22 @@ namespace ContainerSpace {
         }
 
         int AddLastBox(Box box) {
+            int sum_height = 0;
+            int sum_width = 0;
+            int sum_length = 0;
+            MyCustomException myCustomException;
             if (AllBoxesWeight() + box.GetWeight() > weight) {
-                MyCustomException myCustomException;
+
                 std::cout << myCustomException.what();
+            }
+            for (int i = 0; i < boxes.size(); i++) {
+                sum_height += boxes[i].GetHeight();
+                sum_length += boxes[i].GetLength();
+                sum_width += boxes[i].GetWidth();
+            }
+            if (sum_width + box.GetWidth() > width || sum_length + box.GetLength() > length ||
+                sum_height + box.GetHeight() > height) {
+                std::cout << myCustomException.what_size();
             }
             boxes.push_back(box);
             return boxes.size();
