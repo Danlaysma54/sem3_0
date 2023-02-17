@@ -1,7 +1,7 @@
 #include "Box.h"
 
 struct Data {
-    Box Box;
+    BoxSpace::Box box;
     int volume;
 
     Data() {

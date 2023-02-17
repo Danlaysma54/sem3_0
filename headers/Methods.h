@@ -1,5 +1,5 @@
 #include "Box.h"
-
+using namespace BoxSpace;
 int SumValue(Box[], int);
 
 bool NotBiggerThanSize(Box[], int, int);
