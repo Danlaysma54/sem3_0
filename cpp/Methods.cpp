@@ -47,9 +47,9 @@ bool PuttingIt(Box boxes[], int size) {
         }
     }
     for (int i = 1; i < size; i++) {
-        if (data[i].box.GetHeight() < data[i - 1].box.GetHeight() ||
-            data[i].box.GetLength() < data[i - 1].box.GetLength() ||
-            data[i].box.GetWidth() < data[i - 1].box.GetWidth())
+        if (data[i].box.GetHeight() <= data[i - 1].box.GetHeight() ||
+            data[i].box.GetLength() <= data[i - 1].box.GetLength() ||
+            data[i].box.GetWidth() <= data[i - 1].box.GetWidth())
             return false;
     }
     return true;
